@@ -21,6 +21,8 @@
   "homepage": "https://github.com/avgur89/production-frontend#readme",
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^4.7.2",
     "html-webpack-plugin": "^5.5.0",
@@ -30,5 +32,9 @@
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
