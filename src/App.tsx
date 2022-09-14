@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Link, Route, Routes } from "react-router-dom";
+import classNames from "classnames";
 import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 import { MainPageAsync } from "./pages/MainPage/MainPage.async";
 import { Theme } from "./theme/ThemeContext";
@@ -10,7 +11,7 @@ export const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames("app", theme)}>
       <button onClick={toggleTheme}>
         {theme === Theme.LIGHT ? "Dark" : "Light"}
       </button>
