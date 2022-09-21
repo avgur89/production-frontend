@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useTranslation } from "react-i18next";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import classes from "./Navbar.module.scss";
 
@@ -7,6 +8,8 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
+  const { t } = useTranslation();
+
   return (
     <div className={clsx(classes.navbar, [className])}>
       <div className={classes.links}>
@@ -15,14 +18,14 @@ export const Navbar = ({ className }: NavbarProps) => {
           theme={AppLinkTheme.SECONDARY}
           className={classes.link}
         >
-          Home
+          {t("Головна сторінка")}
         </AppLink>
         <AppLink
           to={"/about"}
           theme={AppLinkTheme.SECONDARY}
           className={classes.link}
         >
-          About
+          {t("Про сайт")}
         </AppLink>
       </div>
     </div>
