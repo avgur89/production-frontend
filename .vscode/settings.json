@@ -1,5 +1,8 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
-  "editor.formatOnSave": false
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
