@@ -1,5 +1,6 @@
-import { clsx } from "clsx";
 import { ButtonHTMLAttributes, FC } from "react";
+import { clsx } from "clsx";
+
 import classes from "./Button.module.scss";
 
 export enum ThemeButton {

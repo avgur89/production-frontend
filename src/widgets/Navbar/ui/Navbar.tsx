@@ -1,6 +1,8 @@
-import { clsx } from "clsx";
 import { useTranslation } from "react-i18next";
+import { clsx } from "clsx";
+
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+
 import classes from "./Navbar.module.scss";
 
 interface NavbarProps {

@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { clsx } from "clsx";
 import { useTranslation } from "react-i18next";
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import { LangSwitcher } from "widgets/LangSwitcher";
+import { clsx } from "clsx";
+
 import { Button, ThemeButton } from "shared/ui/Button/Button";
+import { LangSwitcher } from "widgets/LangSwitcher";
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+
 import classes from "./Sidebar.module.scss";
 
 interface SidebarProps {

@@ -1,6 +1,8 @@
-import { clsx } from "clsx";
 import { useTranslation } from "react-i18next";
+import { clsx } from "clsx";
+
 import { Button, ThemeButton } from "shared/ui/Button/Button";
+
 import classes from "./LangSwitcher.module.scss";
 
 interface LangSwitcherProps {

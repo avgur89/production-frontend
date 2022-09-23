@@ -5,10 +5,12 @@
     "jest": true
   },
   "extends": [
-    "airbnb",
     "plugin:react/recommended",
-    "plugin:i18next/recommended",
-    "plugin:prettier/recommended"
+    "airbnb",
+    "airbnb-typescript",
+    "prettier"
+    // "plugin:i18next/recommended",
+    // "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -16,36 +18,57 @@
       "jsx": true
     },
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint", "i18next", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "i18next", "simple-import-sort", "prettier"],
   "rules": {
     "indent": [2, 2],
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-props-no-spreading": "warn",
+    "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".tsx"] }],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "warn",
-    "no-unused-vars": "warn",
-    "no-shadow": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-shadow": "off",
     "no-underscore-dangle": "off",
     "i18next/no-literal-string": [
       "error",
       {
-        "markupOnly": true,
-        "jsx-attributes": {
-          "exclude": ["to"]
-        }
+        "markupOnly": true
+      }
+    ],
+    "import/order": "off",
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          // Packages `react` related packages come first.
+          ["^react", "^@?\\w"],
+          // External packages.
+          ["^"],
+          // Internal packages.
+          ["^(app|pages|widgets|features|entities|shared)(/.*|$)"],
+          // Side effect imports.
+          ["^\\u0000"],
+          // Parent imports.
+          ["^\\.\\.(?!/?$)', '^\\.\\./?$"],
+          // Other relative imports.
+          ["^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$"],
+          // Style imports.
+          ["^.+\\.s?css$"]
+        ]
       }
     ]
   },
   "globals": {
-    "__IS_DEV__": true
+    "IS_DEV": true
   }
 }
