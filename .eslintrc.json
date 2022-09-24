@@ -1,0 +1,73 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:i18next/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "@typescript-eslint", "i18next", "simple-import-sort", "prettier"],
+  "rules": {
+    "indent": [2, 2],
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 2],
+    "react/require-default-props": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-shadow": "off",
+    "no-underscore-dangle": "off",
+    "i18next/no-literal-string": [
+      "error",
+      {
+        "markupOnly": true
+      }
+    ],
+    "import/order": "off",
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          // Packages `react` related packages come first.
+          ["^react", "^@?\\w"],
+          // External packages.
+          ["^"],
+          // Internal packages.
+          ["^(app|pages|widgets|features|entities|shared)(/.*|$)"],
+          // Side effect imports.
+          ["^\\u0000"],
+          // Parent imports.
+          ["^\\.\\.(?!/?$)', '^\\.\\./?$"],
+          // Other relative imports.
+          ["^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$"],
+          // Style imports.
+          ["^.+\\.s?css$"]
+        ]
+      }
+    ]
+  },
+  "globals": {
+    "IS_DEV": true
+  }
+}

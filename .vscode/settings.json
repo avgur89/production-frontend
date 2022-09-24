@@ -1,4 +1,12 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"]
+  "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
+  "scss.validate": false,
+  "css.validate": false,
+  "less.validate": false,
+  "stylelint.validate": ["scss"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  }
 }
