@@ -29,7 +29,12 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
-    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [".js", ".jsx", ".tsx"]
+      }
+    ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "import/extensions": "off",
@@ -43,6 +48,7 @@
         "markupOnly": true
       }
     ],
+    "max-len": ["error", { "ignoreComments": true, "code": 100 }],
     "import/order": "off",
     "simple-import-sort/exports": "warn",
     "simple-import-sort/imports": [
