@@ -19,7 +19,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
   const onToggle = () => setCollapsed((prev) => !prev);
 
   return (
-    <div className={clsx(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}>
+    <div
+      className={clsx(classes.sidebar, { [classes.collapsed]: collapsed }, [
+        className,
+      ])}
+    >
       <div className={classes.row}>
         <Button theme={ThemeButton.CLEAR} onClick={onToggle}>
           {t("Переключити")}

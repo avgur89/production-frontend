@@ -20,11 +20,14 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint", "i18next", "simple-import-sort", "prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "simple-import-sort",
+    "prettier"
+  ],
   "rules": {
-    "indent": [2, 2],
-    "react/jsx-indent": [2, 2],
-    "react/jsx-indent-props": [2, 2],
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
@@ -48,7 +51,6 @@
         "markupOnly": true
       }
     ],
-    "max-len": ["error", { "ignoreComments": true, "code": 100 }],
     "import/order": "off",
     "simple-import-sort/exports": "warn",
     "simple-import-sort/imports": [
