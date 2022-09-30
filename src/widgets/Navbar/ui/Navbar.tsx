@@ -16,10 +16,18 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={clsx(classes.navbar, [className])}>
       <div className={classes.links}>
-        <AppLink to={RoutePath.main} theme={AppLinkTheme.SECONDARY} className={classes.link}>
+        <AppLink
+          to={RoutePath.main}
+          theme={AppLinkTheme.SECONDARY}
+          className={classes.link}
+        >
           {t("Головна сторінка")}
         </AppLink>
-        <AppLink to={RoutePath.about} theme={AppLinkTheme.SECONDARY} className={classes.link}>
+        <AppLink
+          to={RoutePath.about}
+          theme={AppLinkTheme.SECONDARY}
+          className={classes.link}
+        >
           {t("Про сайт")}
         </AppLink>
       </div>

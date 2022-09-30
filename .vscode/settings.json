@@ -5,6 +5,7 @@
   "css.validate": false,
   "less.validate": false,
   "stylelint.validate": ["scss"],
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
