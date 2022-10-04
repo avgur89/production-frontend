@@ -1,12 +1,16 @@
 {
   "extends": [
     "stylelint-config-standard-scss",
-    "stylelint-config-prettier-scss",
     "stylelint-config-rational-order"
   ],
-  "plugins": ["stylelint-order", "stylelint-config-rational-order/plugin"],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-config-rational-order/plugin"
+  ],
   "rules": {
-    "indentation": [2],
+    "indentation": [
+      2
+    ],
     "selector-class-pattern": null
   }
 }

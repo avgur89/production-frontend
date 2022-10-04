@@ -1,11 +1,11 @@
-import { clsx } from "clsx";
+import { clsx } from 'clsx';
 
-import { Theme, useTheme } from "app/providers/ThemeProvider";
-import DarkIcon from "shared/assets/icons/theme-dark.svg";
-import LightIcon from "shared/assets/icons/theme-light.svg";
-import { Button, ThemeButton } from "shared/ui/Button/Button";
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
+import DarkIcon from 'shared/assets/icons/theme-dark.svg';
+import LightIcon from 'shared/assets/icons/theme-light.svg';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
-import classes from "./ThemeSwitcher.module.scss";
+import classes from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
   className?: string;

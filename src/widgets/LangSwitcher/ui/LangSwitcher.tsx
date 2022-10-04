@@ -1,9 +1,9 @@
-import { useTranslation } from "react-i18next";
-import { clsx } from "clsx";
+import { useTranslation } from 'react-i18next';
+import { clsx } from 'clsx';
 
-import { Button, ThemeButton } from "shared/ui/Button/Button";
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
-import classes from "./LangSwitcher.module.scss";
+import classes from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {
   className?: string;
@@ -12,8 +12,7 @@ interface LangSwitcherProps {
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
-  const toogleLanguage = () =>
-    i18n.changeLanguage(i18n.language === "ua" ? "en" : "ua");
+  const toogleLanguage = () => i18n.changeLanguage(i18n.language === 'ua' ? 'en' : 'ua');
 
   return (
     <Button
@@ -21,7 +20,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
       theme={ThemeButton.CLEAR}
       onClick={toogleLanguage}
     >
-      {t("Мова")}
+      {t('Мова')}
     </Button>
   );
 };

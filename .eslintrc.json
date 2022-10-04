@@ -8,8 +8,7 @@
     "plugin:react/recommended",
     "airbnb",
     "airbnb-typescript",
-    "plugin:i18next/recommended",
-    "plugin:prettier/recommended"
+    "plugin:i18next/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -24,8 +23,7 @@
     "react",
     "@typescript-eslint",
     "i18next",
-    "simple-import-sort",
-    "prettier"
+    "simple-import-sort"
   ],
   "rules": {
     "react/require-default-props": "off",
@@ -35,7 +33,11 @@
     "react/jsx-filename-extension": [
       2,
       {
-        "extensions": [".js", ".jsx", ".tsx"]
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".tsx"
+        ]
       }
     ],
     "import/no-unresolved": "off",
@@ -58,19 +60,34 @@
       {
         "groups": [
           // Packages `react` related packages come first.
-          ["^react", "^@?\\w"],
+          [
+            "^react",
+            "^@?\\w"
+          ],
           // External packages.
-          ["^"],
+          [
+            "^"
+          ],
           // Internal packages.
-          ["^(app|pages|widgets|features|entities|shared)(/.*|$)"],
+          [
+            "^(app|pages|widgets|features|entities|shared)(/.*|$)"
+          ],
           // Side effect imports.
-          ["^\\u0000"],
+          [
+            "^\\u0000"
+          ],
           // Parent imports.
-          ["^\\.\\.(?!/?$)', '^\\.\\./?$"],
+          [
+            "^\\.\\.(?!/?$)', '^\\.\\./?$"
+          ],
           // Other relative imports.
-          ["^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$"],
+          [
+            "^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$"
+          ],
           // Style imports.
-          ["^.+\\.s?css$"]
+          [
+            "^.+\\.s?css$"
+          ]
         ]
       }
     ]
