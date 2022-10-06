@@ -26,6 +26,9 @@
     "simple-import-sort"
   ],
   "rules": {
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 2],
+    "indent": [2, 2],
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
@@ -50,7 +53,8 @@
     "i18next/no-literal-string": [
       "error",
       {
-        "markupOnly": true
+        "markupOnly": true,
+        "onlyAttribute": [""]
       }
     ],
     "import/order": "off",
