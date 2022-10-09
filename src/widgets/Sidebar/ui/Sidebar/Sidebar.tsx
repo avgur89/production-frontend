@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { clsx } from "clsx";
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { clsx } from 'clsx';
 
-import { Button, ThemeButton } from "shared/ui/Button/Button";
-import { LangSwitcher } from "widgets/LangSwitcher";
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { LangSwitcher } from 'widgets/LangSwitcher';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
-import classes from "./Sidebar.module.scss";
+import classes from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string;
@@ -26,7 +26,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
     >
       <div className={classes.row}>
         <Button theme={ThemeButton.CLEAR} onClick={onToggle}>
-          {t("Переключити")}
+          {t('Переключити')}
         </Button>
       </div>
 

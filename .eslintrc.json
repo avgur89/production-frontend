@@ -8,8 +8,7 @@
     "plugin:react/recommended",
     "airbnb",
     "airbnb-typescript",
-    "plugin:i18next/recommended",
-    "plugin:prettier/recommended"
+    "plugin:i18next/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -24,33 +23,26 @@
     "react",
     "@typescript-eslint",
     "i18next",
-    "simple-import-sort",
-    "prettier"
+    "simple-import-sort"
   ],
   "rules": {
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 2],
+    "indent": [2, 2],
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
-    "react/jsx-filename-extension": [
-      2,
-      {
-        "extensions": [".js", ".jsx", ".tsx"]
-      }
-    ],
+    "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx", ".tsx"]}],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-shadow": "off",
+    "max-len": ["error", {"ignoreComments": true, "code": 100}],
     "no-underscore-dangle": "off",
-    "i18next/no-literal-string": [
-      "error",
-      {
-        "markupOnly": true
-      }
-    ],
+    "i18next/no-literal-string": ["error", {"markupOnly": true, "onlyAttribute": [""]}],
     "import/order": "off",
     "simple-import-sort/exports": "warn",
     "simple-import-sort/imports": [
@@ -58,19 +50,34 @@
       {
         "groups": [
           // Packages `react` related packages come first.
-          ["^react", "^@?\\w"],
+          [
+            "^react",
+            "^@?\\w"
+          ],
           // External packages.
-          ["^"],
+          [
+            "^"
+          ],
           // Internal packages.
-          ["^(app|pages|widgets|features|entities|shared)(/.*|$)"],
+          [
+            "^(app|pages|widgets|features|entities|shared)(/.*|$)"
+          ],
           // Side effect imports.
-          ["^\\u0000"],
+          [
+            "^\\u0000"
+          ],
           // Parent imports.
-          ["^\\.\\.(?!/?$)', '^\\.\\./?$"],
+          [
+            "^\\.\\.(?!/?$)', '^\\.\\./?$"
+          ],
           // Other relative imports.
-          ["^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$"],
+          [
+            "^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$"
+          ],
           // Style imports.
-          ["^.+\\.s?css$"]
+          [
+            "^.+\\.s?css$"
+          ]
         ]
       }
     ]
