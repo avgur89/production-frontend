@@ -12,13 +12,13 @@ interface LangSwitcherProps {
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
-  const toogleLanguage = () => i18n.changeLanguage(i18n.language === 'ua' ? 'en' : 'ua');
+  const toggleLanguage = () => i18n.changeLanguage(i18n.language === 'ua' ? 'en' : 'ua');
 
   return (
     <Button
       className={clsx(classes.langSwitcher, [className])}
       theme={ThemeButton.CLEAR}
-      onClick={toogleLanguage}
+      onClick={toggleLanguage}
     >
       {t('Мова')}
     </Button>
