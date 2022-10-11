@@ -4,12 +4,6 @@
     "es2021": true,
     "jest": true
   },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb",
-    "airbnb-typescript",
-    "plugin:i18next/recommended"
-  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -19,70 +13,106 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:react-hooks/recommended",
+    "plugin:i18next/recommended"
+  ],
   "plugins": [
     "react",
     "@typescript-eslint",
     "i18next",
     "simple-import-sort"
   ],
+  "ignorePatterns": [
+    "node_modules/",
+    "*.d.ts"
+  ],
   "rules": {
+    // Style
+    "indent": [2, 2],
+    "max-len": [
+      "error",
+      {
+        "ignoreComments": true,
+        "code": 100
+      }
+    ],
+    // Base
+    "no-shadow": "off",
+    "no-unused-vars": "off",
+    "no-underscore-dangle": "off",
+    "func-names": ["error", "as-needed"],
+    //  Typescript
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-shadow": "off",
+    //  React
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
-    "indent": [2, 2],
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
-    "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx", ".tsx"]}],
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [".js", ".jsx", ".tsx"]
+      }
+    ],
+    // i18n
+    "i18next/no-literal-string": [
+      "error",
+      {
+        "markupOnly": true,
+        "ignoreAttribute": ["data-testid", "to"]
+      }
+    ],
+    // Imports
+    "import/order": "off",
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
-    "@typescript-eslint/no-unused-vars": "warn",
-    "@typescript-eslint/no-shadow": "off",
-    "max-len": ["error", {"ignoreComments": true, "code": 100}],
-    "no-underscore-dangle": "off",
-    "i18next/no-literal-string": ["error", {"markupOnly": true, "onlyAttribute": [""]}],
-    "import/order": "off",
     "simple-import-sort/exports": "warn",
     "simple-import-sort/imports": [
       "warn",
       {
         "groups": [
           // Packages `react` related packages come first.
-          [
-            "^react",
-            "^@?\\w"
-          ],
+          ["^react", "^@?\\w"],
           // External packages.
-          [
-            "^"
-          ],
+          ["^"],
           // Internal packages.
-          [
-            "^(app|pages|widgets|features|entities|shared)(/.*|$)"
-          ],
+          ["^(app|pages|widgets|features|entities|shared)(/.*|$)"],
           // Side effect imports.
-          [
-            "^\\u0000"
-          ],
+          ["^\\u0000"],
           // Parent imports.
-          [
-            "^\\.\\.(?!/?$)', '^\\.\\./?$"
-          ],
+          ["^\\.\\.(?!/?$)', '^\\.\\./?$"],
           // Other relative imports.
-          [
-            "^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$"
-          ],
+          ["^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$"],
           // Style imports.
-          [
-            "^.+\\.s?css$"
-          ]
+          ["^.+\\.s?css$"]
         ]
       }
     ]
   },
   "globals": {
     "IS_DEV": true
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/src/**/*.test.{ts,tsx}"],
+      "rules": {
+        "i18next/no-literal-string": "off"
+      }
+    }
+  ]
 }
