@@ -22,6 +22,7 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
+    "plugin:storybook/recommended",
     "airbnb",
     "plugin:react-hooks/recommended",
     "plugin:i18next/recommended"
@@ -46,14 +47,31 @@
         "code": 100
       }
     ],
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+    "space-before-blocks": ["error", "always"],
+    "spaced-comment": ["warn", "always"],
+    "object-curly-spacing": ["error", "always"],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
     // Base
     "no-shadow": "off",
     "no-unused-vars": "off",
     "no-underscore-dangle": "off",
     "func-names": ["error", "as-needed"],
+    "prefer-const": "off",
+    "no-multi-spaces": ["error"],
+    "no-mixed-spaces-and-tabs": "error",
+    "keyword-spacing": ["error", { "before": true, "after": true }],
+    "no-return-assign": ["off"],
+    "prefer-promise-reject-errors": ["off"],
     //  Typescript
-    "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-interface": ["off", { "allowSingleExtends": false }],
+    "@typescript-eslint/no-unused-vars": ["warn", { "args": "after-used", "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-inferrable-types": "warn",
+    "@typescript-eslint/no-empty-function": "warn",
     //  React
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
@@ -67,6 +85,15 @@
         "extensions": [".js", ".jsx", ".tsx"]
       }
     ],
+    "jsx-quotes": ["error", "prefer-double"],
+    "react/jsx-uses-react": "off",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-props-no-multi-spaces": "error",
+    "react/prop-types": ["off"],
+    "react/no-children-prop": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-tag-spacing": ["error", { "beforeSelfClosing":  "always" }],
     // i18n
     "i18next/no-literal-string": [
       "error",
@@ -109,9 +136,14 @@
   },
   "overrides": [
     {
-      "files": ["**/src/**/*.test.{ts,tsx}"],
+      "files": [
+        "**/src/**/*.test.{ts,tsx}",
+        "*.stories.@(ts|tsx|js|jsx|mjs|cjs)"
+      ],
       "rules": {
-        "i18next/no-literal-string": "off"
+        "i18next/no-literal-string": "off",
+        "storybook/hierarchy-separator": "error",
+        "storybook/default-exports": "off"
       }
     }
   ]
