@@ -20,12 +20,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
 
   return (
     <div
+      data-testid="sidebar"
       className={clsx(classes.sidebar, { [classes.collapsed]: collapsed }, [
         className,
       ])}
     >
       <div className={classes.row}>
-        <Button theme={ThemeButton.CLEAR} onClick={onToggle}>
+        <Button data-testid="sidebar-toggle" theme={ThemeButton.CLEAR} onClick={onToggle}>
           {t('Переключити')}
         </Button>
       </div>

@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
+    "sourceMap": true,
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",
-    "target": "es5",
+    "target": "es6",
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
@@ -15,13 +16,17 @@
     },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"
       }
     ]
   },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": [
+    "node_modules",
+    "**/*.js"
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
