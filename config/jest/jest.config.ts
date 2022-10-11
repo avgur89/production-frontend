@@ -5,6 +5,7 @@ export default {
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: ['/node_modules/'],
   moduleDirectories: ['node_modules', 'src'],
+  modulePaths: ['<rootDir>src'],
   moduleFileExtensions: [
     'js',
     'mjs',
