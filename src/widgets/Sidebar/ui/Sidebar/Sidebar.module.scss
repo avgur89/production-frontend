@@ -1,3 +1,8 @@
+.row {
+  display: flex;
+  justify-content: center;
+}
+
 .sidebar {
   position: relative;
   width: var(--sidebar-width);
@@ -6,8 +11,10 @@
   transition: width 0.3s;
 }
 
-.collapsed {
-  width: 80px;
+.collapsedBtn {
+  position: absolute;
+  right: -32px;
+  bottom: 25px;
 }
 
 .switchers {
@@ -18,11 +25,22 @@
   width: 100%;
 }
 
-.row {
-  display: flex;
-  justify-content: center;
+.langSwitcher {
+  margin-left: 20px;
 }
 
-.lang {
-  margin-left: 20px;
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .switchers {
+    flex-direction: column;
+  }
+
+  .langSwitcher {
+    margin-left: 0;
+  }
+
+  .themeSwitcher {
+    margin-bottom: 10px;
+  }
 }
