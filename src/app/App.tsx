@@ -6,8 +6,6 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
-import './styles/index.scss';
-
 export const App = () => {
   const { theme } = useTheme();
 
