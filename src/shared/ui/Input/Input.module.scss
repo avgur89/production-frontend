@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.placeholder {
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.input {
+  width: 100%;
+  color: var(--primary-color);
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
