@@ -29,6 +29,7 @@
   ],
   "plugins": [
     "react",
+    "react-hooks",
     "@typescript-eslint",
     "i18next",
     "simple-import-sort"
@@ -92,8 +93,11 @@
     "react/prop-types": ["off"],
     "react/no-children-prop": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/exhaustive-deps": "error",
     "react/jsx-tag-spacing": ["error", { "beforeSelfClosing":  "always" }],
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "no-param-reassign": "off",
     // i18n
     "i18next/no-literal-string": [
       "error",
@@ -137,11 +141,11 @@
   "overrides": [
     {
       "files": [
-        "**/src/**/*.test.{ts,tsx}",
-        "*.stories.@(ts|tsx|js|jsx|mjs|cjs)"
+        "**/src/**/*.{test,stories}.{ts,tsx}"
       ],
       "rules": {
         "i18next/no-literal-string": "off",
+        "max-len": "off",
         "storybook/hierarchy-separator": "error",
         "storybook/default-exports": "off"
       }
