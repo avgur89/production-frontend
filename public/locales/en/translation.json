@@ -8,5 +8,8 @@
   "Тест помилки": "Error test",
   "Увійти": "Login",
   "Введіть логін": "Enter login",
-  "Введіть пароль": "Enter password"
+  "Введіть пароль": "Enter password",
+  "Форма авторизації": "Form authorization",
+  "Невірний логін або пароль": "Login or password is wrong",
+  "Вийти": "Logout"
 }
