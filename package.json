@@ -20,7 +20,8 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "storybook:build": "build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -62,6 +63,7 @@
     "@typescript-eslint/parser": "^5.12.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-i18next-extract": "^0.8.3",
+    "cors": "^2.8.5",
     "css-loader": "^6.6.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -74,6 +76,7 @@
     "eslint-plugin-storybook": "^0.6.6",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "json-server": "^0.17.1",

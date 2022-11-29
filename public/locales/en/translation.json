@@ -6,5 +6,10 @@
   "Виникла помилка": "Some Error occurred, please try again!",
   "Оновити сторінку": "Refresh page",
   "Тест помилки": "Error test",
-  "Увійти": "Login"
+  "Увійти": "Login",
+  "Введіть логін": "Enter login",
+  "Введіть пароль": "Enter password",
+  "Форма авторизації": "Form authorization",
+  "Невірний логін або пароль": "Login or password is wrong",
+  "Вийти": "Logout"
 }
