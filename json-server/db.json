@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Oleksandr",
+    "lastname": "Hurov",
+    "age": "33",
+    "currency": "UAH",
+    "country": "Ukraine",
+    "city": "Kyiv",
+    "username": "admin",
+    "avatar": "https://avatars.githubusercontent.com/u/6349574?v=4"
+  }
 }
