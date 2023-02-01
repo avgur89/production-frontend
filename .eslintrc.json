@@ -136,7 +136,8 @@
     ]
   },
   "globals": {
-    "IS_DEV": true
+    "IS_DEV": true,
+    "API_URL": true
   },
   "overrides": [
     {
