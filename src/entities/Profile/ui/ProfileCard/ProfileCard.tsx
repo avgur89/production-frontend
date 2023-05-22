@@ -1,47 +1,72 @@
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { clsx } from 'clsx';
 
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
-import {
-  getProfileIsLoading,
-} from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Profile } from 'entities/Profile';
 import { Input } from 'shared/ui/Input/Input';
-import { Text } from 'shared/ui/Text/Text';
+import { Loader } from 'shared/ui/Loader/Loader';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 
 import classes from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
   className?: string;
+  data?: Profile;
+  error?: string;
+  isLoading?: boolean;
+  readonly?: boolean;
+  onChangeFirstname: (value?: string) => void;
+  onChangeLastname: (value?: string) => void;
 }
 
-export const ProfileCard = ({ className }: ProfileCardProps) => {
+export const ProfileCard = (props: ProfileCardProps) => {
+  const {
+    className,
+    data,
+    isLoading,
+    error,
+    readonly,
+    onChangeFirstname,
+    onChangeLastname,
+  } = props;
   const { t } = useTranslation('profile');
-  const data = useSelector(getProfileData);
-  const isLoading = useSelector(getProfileIsLoading);
-  const error = useSelector(getProfileError);
+
+  if (isLoading) {
+    return (
+      <div className={clsx(classes.profileCard, [className, classes.loading])}>
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={clsx(classes.profileCard, [className, classes.error])}>
+        <Text
+          theme={TextTheme.ERROR}
+          title={t('Виникла помилка при завантаженні профіля')}
+          text={t('Спробуйте оновити сторінку')}
+          align={TextAlign.CENTER}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={clsx(classes.profileCard, [className])}>
-      <div className={classes.header}>
-        <Text title={t('Профіль')} />
-        <Button theme={ButtonTheme.OUTLINE} className={classes.editBtn}>{t('Редагувати')}</Button>
-      </div>
-
-      <div className={classes.data}>
-        <Input
-          value={data?.first}
-          placeholder={t("Ваше ім'я")}
-          className={classes.input}
-        />
-        <Input
-          value={data?.lastname}
-          placeholder={t('Ваше прізвище')}
-          className={classes.input}
-        />
-      </div>
+      <Input
+        value={data?.first}
+        placeholder={t("Ваше ім'я")}
+        className={classes.input}
+        readonly={readonly}
+        onChange={onChangeFirstname}
+      />
+      <Input
+        value={data?.lastname}
+        placeholder={t('Ваше прізвище')}
+        className={classes.input}
+        readonly={readonly}
+        onChange={onChangeLastname}
+      />
     </div>
   );
 };
