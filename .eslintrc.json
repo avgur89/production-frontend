@@ -64,6 +64,7 @@
     "keyword-spacing": ["error", { "before": true, "after": true }],
     "no-return-assign": ["off"],
     "prefer-promise-reject-errors": ["off"],
+    "no-undef": "off",
     //  Typescript
     "@typescript-eslint/no-shadow": "off",
     "@typescript-eslint/explicit-function-return-type": "off",

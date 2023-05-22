@@ -4,6 +4,7 @@ import {
 } from '@reduxjs/toolkit';
 import { To } from '@remix-run/router';
 import { AxiosInstance } from 'axios';
+import { Dispatch } from 'redux';
 
 import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
@@ -32,10 +33,11 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArguments {
   api: AxiosInstance;
-  navigate: (to: To, options?: NavigateOptions) => void;
+  navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export interface ThunkConfig<T> {
   rejectValue: T;
   extra: ThunkExtraArguments;
+  dispatch?: Dispatch;
 }

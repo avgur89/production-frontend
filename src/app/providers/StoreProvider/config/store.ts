@@ -1,9 +1,11 @@
 import { NavigateOptions } from 'react-router';
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import {
+  CombinedState, configureStore, Reducer, ReducersMapObject,
+} from '@reduxjs/toolkit';
 import { To } from '@remix-run/router';
 
 import { createReducerManager } from './reducerManager';
-import { StateSchema } from './StateSchema';
+import { StateSchema, ThunkExtraArguments } from './StateSchema';
 
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
@@ -22,16 +24,18 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rootReducer);
 
+  const extraArg: ThunkExtraArguments = {
+    api: $api,
+    navigate,
+  };
+
   const store = configureStore({
-    reducer: reducerManager.reduce,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     devTools: IS_DEV,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
       thunk: {
-        extraArgument: {
-          api: $api,
-          navigate,
-        },
+        extraArgument: extraArg,
       },
     }),
   });

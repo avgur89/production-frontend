@@ -1,5 +1,3 @@
-import { DeepPartial } from 'redux';
-
 import { getCounterValue } from './getCounterValue';
 
 import { StateSchema } from 'app/providers/StoreProvider';
