@@ -22,6 +22,12 @@
   border: 1px solid var(--primary-color);
 }
 
+.outline_red {
+  color: var(--red-light);
+  background: none;
+  border: 1px solid var(--red-light);
+}
+
 .background {
   color: var(--primary-color);
   background: var(--bg-color);

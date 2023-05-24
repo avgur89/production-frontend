@@ -5,5 +5,8 @@
   "Ваше прізвище": "Last name",
   "Виникла помилка при завантаженні профіля": "Error is occurred during profile download",
   "Спробуйте оновити сторінку": "Try to refresh the page",
-  "Відмінити": "Cancel"
+  "Відмінити": "Cancel",
+  "Зберегти": "Save",
+  "Ваш вік": "Age",
+  "Місто": "City"
 }

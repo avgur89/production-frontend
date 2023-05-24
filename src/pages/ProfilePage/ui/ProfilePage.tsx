@@ -1,5 +1,4 @@
 import { useCallback, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { clsx } from 'clsx';
 
@@ -7,8 +6,8 @@ import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 import {
   fetchProfileData,
-  getProfileData,
-  getProfileError, getProfileForm,
+  getProfileError,
+  getProfileForm,
   getProfileIsLoading,
   getProfileReadonly,
   profileActions,
@@ -48,6 +47,14 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     dispatch(profileActions.updateProfile({ lastname: value || '' }));
   }, [dispatch]);
 
+  const onChangeAge = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
+  }, [dispatch]);
+
+  const onChangeCity = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ city: value || '' }));
+  }, [dispatch]);
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={clsx([className])}>
@@ -59,6 +66,8 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
           readonly={readonly}
           onChangeFirstname={onChangeFirstname}
           onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
         />
       </div>
     </DynamicModuleLoader>
