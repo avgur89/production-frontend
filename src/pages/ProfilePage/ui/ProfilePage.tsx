@@ -4,6 +4,8 @@ import { clsx } from 'clsx';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import {
   fetchProfileData,
   getProfileError,
@@ -55,6 +57,22 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     dispatch(profileActions.updateProfile({ city: value || '' }));
   }, [dispatch]);
 
+  const onChangeUsername = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ username: value || '' }));
+  }, [dispatch]);
+
+  const onChangeAvatar = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ avatar: value || '' }));
+  }, [dispatch]);
+
+  const onChangeCurrency = useCallback((currency: Currency) => {
+    dispatch(profileActions.updateProfile({ currency }));
+  }, [dispatch]);
+
+  const onChangeCountry = useCallback((country: Country) => {
+    dispatch(profileActions.updateProfile({ country }));
+  }, [dispatch]);
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={clsx([className])}>
@@ -68,6 +86,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
           onChangeLastname={onChangeLastname}
           onChangeAge={onChangeAge}
           onChangeCity={onChangeCity}
+          onChangeUsername={onChangeUsername}
+          onChangeAvatar={onChangeAvatar}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
         />
       </div>
     </DynamicModuleLoader>
