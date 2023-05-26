@@ -9,12 +9,8 @@ import { PageLoader } from 'widgets/PageLoader';
 const AppRouter = () => {
   const isAuth = useSelector(getUserAuthData);
 
-  const routes = useMemo(() => Object.values(routeConfig).filter((route) => {
-    if (route.authOnly && !isAuth) {
-      return false;
-    }
-    return true;
-  }), [isAuth]);
+  // eslint-disable-next-line max-len
+  const routes = useMemo(() => Object.values(routeConfig).filter((route) => !(route.authOnly && !isAuth)), [isAuth]);
 
   return (
     <Routes>

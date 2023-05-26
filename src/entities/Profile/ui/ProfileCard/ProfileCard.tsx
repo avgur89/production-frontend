@@ -46,10 +46,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
   } = props;
   const { t } = useTranslation('profile');
 
-  const mods: Mods = {
-    [classes.editing]: !readonly,
-  };
-
   if (isLoading) {
     return (
       <div className={clsx(classes.profileCard, [className, classes.loading])}>
@@ -70,6 +66,10 @@ export const ProfileCard = (props: ProfileCardProps) => {
       </div>
     );
   }
+
+  const mods: Mods = {
+    [classes.editing]: !readonly,
+  };
 
   return (
     <div className={clsx(classes.profileCard, mods, [className])}>

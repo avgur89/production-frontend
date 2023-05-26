@@ -4,7 +4,6 @@ import {
 } from '@reduxjs/toolkit';
 import { To } from '@remix-run/router';
 import { AxiosInstance } from 'axios';
-import { Dispatch } from 'redux';
 
 import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
@@ -39,6 +38,5 @@ export interface ThunkExtraArguments {
 export interface ThunkConfig<T> {
   rejectValue: T;
   extra: ThunkExtraArguments;
-  dispatch?: Dispatch;
   state: StateSchema;
 }

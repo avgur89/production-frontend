@@ -31,9 +31,9 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
     readonly,
   } = props;
 
-  const onChangeHandler = useCallback(() => {
+  const onChangeHandler = useCallback((value: string) => {
     onChange?.(value as Country);
-  }, [onChange, value]);
+  }, [onChange]);
 
   return (
     <Select
