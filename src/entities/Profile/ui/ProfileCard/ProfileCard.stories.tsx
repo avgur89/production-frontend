@@ -5,7 +5,6 @@ import { ProfileCard } from './ProfileCard';
 
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/tests/storybook.jpg';
 
 export default {
   title: 'entities/ProfileCard',
@@ -27,7 +26,7 @@ Primary.args = {
     country: Country.Ukraine,
     city: 'Kyiv',
     username: 'admin',
-    avatar,
+    avatar: 'https://avatars.githubusercontent.com/u/6349574?v=4',
   },
 };
 
