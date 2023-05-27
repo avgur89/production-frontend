@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { clsx } from 'clsx';
 
-import { Currency } from '../../model/types/currency';
+import { Currency } from '../../model/types/Currency';
 
 import { Select } from 'shared/ui/Select/Select';
 

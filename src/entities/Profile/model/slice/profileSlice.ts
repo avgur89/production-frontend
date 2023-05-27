@@ -4,7 +4,7 @@ import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
 import {
   updateProfileData,
 } from '../services/updateProfileData/updateProfileData';
-import { Profile, ProfileSchema } from '../types/profile';
+import { Profile, ProfileSchema } from '../types/Profile';
 
 const initialState: ProfileSchema = {
   readonly: true,

@@ -5,13 +5,11 @@ import {
 import { To } from '@remix-run/router';
 import { AxiosInstance } from 'axios';
 
-import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 
 export interface StateSchema {
-  counter: CounterSchema;
   user: UserSchema;
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
