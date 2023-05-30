@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { clsx } from 'clsx';
 
@@ -9,7 +10,7 @@ interface LangSwitcherProps {
   className?: string;
 }
 
-export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => i18n.changeLanguage(i18n.language === 'ua' ? 'en' : 'ua');
@@ -23,4 +24,4 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
       {t('Мова')}
     </Button>
   );
-};
+});

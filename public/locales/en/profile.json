@@ -1,0 +1,21 @@
+{
+  "Профіль": "Profile",
+  "Редагувати": "Edit",
+  "Ваше ім'я": "First name",
+  "Ваше прізвище": "Last name",
+  "Виникла помилка при завантаженні профіля": "Error is occurred during profile download",
+  "Спробуйте оновити сторінку": "Try to refresh the page",
+  "Відмінити": "Cancel",
+  "Зберегти": "Save",
+  "Ваш вік": "Age",
+  "Місто": "City",
+  "Користувач": "Username",
+  "Аватар": "Avatar",
+  "Валюта": "Currency",
+  "Країна": "Country",
+  "Серверна помилка": "Server error",
+  "Введіть поле користувача": "User data is required",
+  "Введіть дані": "Data is required",
+  "Введіть країну": "Country is required",
+  "Введіть вік": "Age is required"
+}

@@ -31,21 +31,6 @@
   margin-left: 30px;
 }
 
-.linkWrapper {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.linkIcon {
-  fill: var(--inverted-primary-color);
-}
-
-.link {
-  margin-left: 10px;
-  opacity: 1;
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
@@ -59,11 +44,5 @@
 
   .themeSwitcher {
     margin-bottom: 10px;
-  }
-
-  .link {
-    width: 0;
-    opacity: 0;
-    transition: 0.2s opacity;
   }
 }

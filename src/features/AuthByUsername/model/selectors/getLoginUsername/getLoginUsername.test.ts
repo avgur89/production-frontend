@@ -1,5 +1,3 @@
-import { DeepPartial } from 'redux';
-
 import {
   getLoginUsername,
 } from './getLoginUsername';
