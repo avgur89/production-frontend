@@ -1,19 +1,28 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { clsx } from 'clsx';
+
+import { ArticleTextBlock } from '../../model/types/Article';
+
+import { Text } from 'shared/ui/Text/Text';
 
 import classes from './ArticleTextBlockComponent.module.scss';
 
 interface ArticleTextBlockComponentProps {
   className?: string;
+  block: ArticleTextBlock;
 }
 
-export const ArticleTextBlockComponent = ({ className }: ArticleTextBlockComponentProps) => {
+export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentProps) => {
   const { t } = useTranslation();
+  const { className, block } = props;
 
   return (
-    // eslint-disable-next-line i18next/no-literal-string
     <div className={clsx(classes.articleTextBlock, [className])}>
-      ArticleTextBlockComponent
+      {block.title && <Text className={classes.title} title={block.title} />}
+      {block.paragraphs.map((paragraph, index) => (
+        <Text key={paragraph} className={classes.paragraph} text={paragraph} />
+      ))}
     </div>
   );
-};
+});
