@@ -1,8 +1,9 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { clsx } from 'clsx';
 
 import { ArticleImageBlock } from '../../model/types/Article';
+
+import { Text, TextAlign } from 'shared/ui/Text/Text';
 
 import classes from './ArticleImageBlockComponent.module.scss';
 
@@ -12,12 +13,16 @@ interface ArticleImageBlockComponentProps {
 }
 
 export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponentProps) => {
-  const { t } = useTranslation();
   const { className, block } = props;
 
   return (
     <div className={clsx(classes.articleImageBlock, [className])}>
-      {block.src && <img src={block.src} alt={block.type} />}
+      <img
+        className={classes.img}
+        src={block.src}
+        alt={block.title}
+      />
+      {block.title && <Text text={block.title} align={TextAlign.CENTER} />}
     </div>
   );
 });

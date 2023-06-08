@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { clsx } from 'clsx';
 
 import { ArticleTextBlock } from '../../model/types/Article';
@@ -14,13 +13,12 @@ interface ArticleTextBlockComponentProps {
 }
 
 export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentProps) => {
-  const { t } = useTranslation();
   const { className, block } = props;
 
   return (
     <div className={clsx(classes.articleTextBlock, [className])}>
       {block.title && <Text className={classes.title} title={block.title} />}
-      {block.paragraphs.map((paragraph, index) => (
+      {block.paragraphs.map((paragraph) => (
         <Text key={paragraph} className={classes.paragraph} text={paragraph} />
       ))}
     </div>

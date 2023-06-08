@@ -84,7 +84,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   }, []);
 
   useEffect(() => {
-    dispatch(fetchArticleById(id));
+    if (PROJECT !== 'storybook') {
+      dispatch(fetchArticleById(id));
+    }
   }, [dispatch, id]);
 
   let content;
