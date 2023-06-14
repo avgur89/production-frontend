@@ -23,6 +23,16 @@ export const CommentList = memo((props: CommentListProps) => {
     isLoading,
   } = props;
 
+  if (isLoading) {
+    return (
+      <div className={clsx(classes.list, [className])}>
+        <CommentItem isLoading />
+        <CommentItem isLoading />
+        <CommentItem isLoading />
+      </div>
+    );
+  }
+
   return (
     <div className={clsx(classes.list, [className])}>
       {comments?.length

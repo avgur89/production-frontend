@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { clsx } from 'clsx';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
@@ -43,6 +44,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const { id } = useParams<{ id: string }>();
 
   const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t('Серверна помилка'),
@@ -53,7 +55,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   };
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData());
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
   });
 
   const onChangeFirstname = useCallback((value?: string) => {
@@ -89,7 +93,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   }, [dispatch]);
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <div className={clsx([className])}>
         <ProfilePageHeader />
         {validateErrors?.length && validateErrors.map((error) => (
