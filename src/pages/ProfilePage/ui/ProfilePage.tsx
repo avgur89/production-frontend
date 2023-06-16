@@ -1,6 +1,7 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { clsx } from 'clsx';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
@@ -24,6 +25,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 const reducers: ReducersList = {
@@ -42,6 +44,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const { id } = useParams<{ id: string }>();
 
   const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t('Серверна помилка'),
@@ -51,11 +54,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     [ValidateProfileError.INCORRECT_AGE]: t('Введіть вік'),
   };
 
-  useEffect(() => {
-    if (PROJECT !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstname = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ first: value || '' }));
@@ -90,7 +93,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   }, [dispatch]);
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <div className={clsx([className])}>
         <ProfilePageHeader />
         {validateErrors?.length && validateErrors.map((error) => (

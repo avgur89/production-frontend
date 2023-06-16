@@ -12,5 +12,7 @@
   "Форма авторизації": "Form authorization",
   "Невірний логін або пароль": "Login or password is wrong",
   "Вийти": "Logout",
-  "Профіль": "Profile"
+  "Профіль": "Profile",
+  "Введіть текст коментарія": "Enter your comment",
+  "Відправити": "Send"
 }

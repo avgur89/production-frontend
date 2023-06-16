@@ -19,7 +19,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
       "views": 1022,
       "createdAt": "22.06.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -98,7 +100,19 @@
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test",
+      "id": "bUvMv4z"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hello",
+      "id": "Sk2NGJO"
     }
   ],
   "users": [
@@ -106,23 +120,39 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://avatars.githubusercontent.com/u/6349574?v=4"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
     }
   ],
-  "profile": {
-    "first": "Oleksandr",
-    "lastname": "Hurov",
-    "age": 34,
-    "currency": "UAH",
-    "country": "United States of America",
-    "city": "Kyiv",
-    "username": "admin",
-    "avatar": "https://avatars.githubusercontent.com/u/6349574?v=4"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Oleksandr",
+      "lastname": "Hurov",
+      "age": 34,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Kyiv",
+      "username": "admin",
+      "avatar": "https://avatars.githubusercontent.com/u/6349574?v=4"
+    },
+    {
+      "id": "2",
+      "first": "Brendan",
+      "lastname": "Eich",
+      "age": 61,
+      "currency": "USD",
+      "country": "United States of America",
+      "city": "Denver",
+      "username": "user",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+    }
+  ]
 }

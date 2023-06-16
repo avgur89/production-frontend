@@ -8,6 +8,7 @@ import { ValidateProfileError } from 'entities/Profile';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 const data = {
+  id: '1',
   first: 'Oleksandr',
   lastname: 'Hurov',
   age: 34,

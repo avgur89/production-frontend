@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { clsx } from 'clsx';
@@ -28,6 +28,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
@@ -83,11 +84,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (PROJECT !== 'storybook') {
-      dispatch(fetchArticleById(id));
-    }
-  }, [dispatch, id]);
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id));
+  });
 
   let content;
 
@@ -142,7 +141,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <div className={clsx(classes.articleDetails, [className])}>
         {content}
       </div>
