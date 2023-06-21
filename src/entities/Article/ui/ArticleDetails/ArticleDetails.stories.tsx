@@ -7,7 +7,7 @@ import { ArticleDetails } from './ArticleDetails';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: 'entities/ArticleDetails',
+  title: 'entities/Article/ArticleDetails',
   component: ArticleDetails,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -24,11 +24,15 @@ const article: Article = {
   views: 1022,
   createdAt: '22.06.2022',
   type: [ArticleType.IT],
+  user: {
+    id: '1',
+    username: 'admin',
+  },
   blocks: [
     {
       id: '1',
       type: ArticleBlockType.TEXT,
-      title: 'Заголовок этого блока',
+      title: 'Заголовок цього блока',
       paragraphs: [
         'Программа, яку по традициї називають «Hello, world!», дуже проста. Вона виводить фразу «Hello, world!», або іншу подібну, за допомогою мови програмування.',
         'JavaScript — це мова, програми на якій можна виконувати в різних середовищах. В нашому випадку мова йде про браузери та серверну платформу Node.js. Якшо до сих пір ви не написали ні строчки коду на JS та читаєте цей текст в браузері, на настільному пк, це означає, що ви буквально в декількох секундах від своєї першої JavaScript-программи.',
