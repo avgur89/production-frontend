@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { clsx } from 'clsx';
 
 import { Article, ArticleView } from '../..';
@@ -25,7 +24,6 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.PLATE
   ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { t } = useTranslation();
   const {
     className,
     articles,
