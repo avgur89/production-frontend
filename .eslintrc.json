@@ -42,7 +42,7 @@
     // Style
     "indent": [2, 2],
     "max-len": [
-      "error",
+      "warn",
       {
         "ignoreComments": true,
         "code": 100
@@ -65,6 +65,7 @@
     "no-return-assign": ["off"],
     "prefer-promise-reject-errors": ["off"],
     "no-undef": "off",
+    "react/no-array-index-key": "off",
     //  Typescript
     "@typescript-eslint/no-shadow": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
